@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Portfolios</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Student Portfolios</h1>
+      <p class="lead">Computer Science • Business Administration • Business Information Technology</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="students-list" class="grid"></section>
+    <p class="hint">To add your profile: create students/{your-username}.json, upload images/{your-username}.{jpg,png,svg} and add an entry to students/students.json</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Template — deploy with GitHub Pages</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Render the index
+    document.addEventListener('DOMContentLoaded', async () => {
+      const listContainer = document.getElementById('students-list');
+      try {
+        const students = await loadStudentsRegistry();
+        if (!students || students.length === 0) {
+          listContainer.innerHTML = '<p>No student profiles yet. Follow the README to add one.</p>';
+          return;
+        }
+        listContainer.innerHTML = students.map(renderCard).join('');
+      } catch (err) {
+        listContainer.innerHTML = '<p>Failed to load students registry.</p>';
+        console.error(err);
+      }
+    });
+
+    function renderCard(s){
+      const img = s.image || 'images/default-avatar.svg';
+      const programme = s.programme || '';
+      return `
+        <article class="card">
+          <a href="student.html?user=${encodeURIComponent(s.username)}" class="card-link">
+            <img class="avatar" src="${img}" alt="${escapeHTML(s.name)}">
+            <div class="card-body">
+              <h3>${escapeHTML(s.name)}</h3>
+              <p class="muted">${escapeHTML(programme)}</p>
+            </div>
+          </a>
+        </article>`;
+    }
+
+    function escapeHTML(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  </script>
+</body>
+</html>

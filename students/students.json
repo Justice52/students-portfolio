@@ -1,0 +1,20 @@
+[
+  {
+    "username": "justice52",
+    "name": "Justice Ayamdoo",
+    "programme": "Computer Science",
+    "image": "images/IMG_4623.jpg"
+  },
+  {
+    "username": "student2",
+    "name": "Student Two",
+    "programme": "Information Technology",
+    "image": "images/student2.jpg"
+  },
+  {
+    "username": "student3",
+    "name": "Student Three",
+    "programme": "Software Engineering",
+    "image": "images/student3.jpg"
+  }
+]

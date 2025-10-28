@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container">
+      <a href="index.html" class="back">← Back to index</a>
+      <h1 id="title">Profile</h1>
+    </div>
+  </header>
+
+  <main class="container profile" id="profile-area">
+    <p>Loading profile…</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Template — deploy with GitHub Pages</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Load the student profile determined by ?user=username
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(location.search);
+      const username = params.get('user');
+      const area = document.getElementById('profile-area');
+      if (!username) {
+        area.innerHTML = '<p>No student specified. Use ?user=yourusername</p>';
+        return;
+      }
+      try {
+        const profile = await loadProfile(username);
+        if (!profile) { area.innerHTML = '<p>Profile not found.</p>'; return; }
+        document.getElementById('title').textContent = profile.name || profile.username;
+        area.innerHTML = renderProfile(profile);
+      } catch (err) {
+        console.error(err);
+        area.innerHTML = '<p>Failed to load profile.</p>';
+      }
+    });
+
+    function renderProfile(p){
+      const img = p.image || 'images/default-avatar.svg';
+      const skills = (p.skills || []).map(s => `<li>${escapeHTML(s)}</li>`).join('');
+      const experience = (p.experience || []).map(e => `
+        <li class="exp">
+          <strong>${escapeHTML(e.title)}</strong>
+          <div class="muted">${escapeHTML(e.period || '')}</div>
+          <p>${escapeHTML(e.description || '')}</p>
+        </li>`).join('');
+      const projects = (p.projects || []).map(pr => `
+        <li>
+          <strong>${escapeHTML(pr.name)}</strong>
+          <div>${escapeHTML(pr.description || '')} ${pr.link ? `<a href="${escapeHTML(pr.link)}" target="_blank" rel="noopener">→ repo</a>` : ''}</div>
+        </li>`).join('');
+      const contact = p.contact || {};
+      return `
+        <section class="profile-hero">
+          <img class="profile-avatar" src="${img}" alt="${escapeHTML(p.name)}">
+          <div>
+            <h2>${escapeHTML(p.name)}</h2>
+            <p class="muted">${escapeHTML(p.programme || '')} ${p.year ? ' • ' + escapeHTML(p.year) : ''}</p>
+            <p>${escapeHTML(p.bio || '')}</p>
+            <p class="contact">
+              ${contact.email ? `<a href="mailto:${escapeHTML(contact.email)}">Email</a>` : ''}
+              ${contact.github ? ` • <a href="${escapeHTML(contact.github)}" target="_blank" rel="noopener">GitHub</a>` : ''}
+              ${contact.linkedin ? ` • <a href="${escapeHTML(contact.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Skills</h3>
+          <ul class="skills">${skills || '<li>No skills listed</li>'}</ul>
+        </section>
+
+        <section>
+          <h3>Experience</h3>
+          <ul class="experience">${experience || '<li>No experience listed</li>'}</ul>
+        </section>
+
+        <section>
+          <h3>Projects</h3>
+          <ul class="projects">${projects || '<li>No projects listed</li>'}</ul>
+        </section>
+      `;
+    }
+
+    function escapeHTML(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  </script>
+</body>
+</html>

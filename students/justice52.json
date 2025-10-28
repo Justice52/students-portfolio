@@ -1,0 +1,33 @@
+{
+  "username": "justice52",
+  "name": "Justice Ayamdoo",
+  "programme": "Computer Science",
+  "year": "3rd Year",
+  "bio": "Computer Science student interested in web development, data science, and Artificial Intelligence. Comfortable with JavaScript and Python.",
+  "image": "images/IMG_4623.jpg",
+  "contact": {
+    "email": "justice52@example.com",
+    "github": "https://github.com/Justice52",
+    "linkedin": ""
+  },
+  "skills": ["JavaScript", "HTML & CSS", "Python", "SQL", "Git"],
+  "experience": [
+    {
+      "title": "Intern — Web Team, Example Corp",
+      "period": "Jun 2024 - Aug 2024",
+      "description": "Built front-end components and integrated REST APIs."
+    },
+     {
+      "title": "Intern — Web Team, Example Corp",
+      "period": "Jun 2024 - Aug 2024",
+      "description": "Built front-end components and integrated REST APIs."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Template",
+      "description": "A static portfolio template rendered from JSON that deploys on GitHub Pages.",
+      "link": ""
+    }
+  ]
+}
