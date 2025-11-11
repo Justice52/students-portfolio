@@ -16,5 +16,11 @@
     "name": "Student Three",
     "programme": "Software Engineering",
     "image": "images/student3.jpg"
+  },
+  {
+    "username": "QuofiOBrien",
+    "name": "Ahuah-Debrah Prince Thomas",
+    "programme": "Computer Science",
+    "image": "images/Moi.png"
   }
 ]
