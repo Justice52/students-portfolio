@@ -1,0 +1,33 @@
+{
+  "username": "marpe-bit",
+  "name": "Ruth Asiedua Nyarkoh",
+  "programme": "BSc Business Information Technology",
+  "year": "4th Year",
+  "bio": "Business Information Technology student, Fashion Enthusiast, HTML, Microsoft Office Suite, Graphic Design, Singing, Mentoring, Volunteering, Task2Hire Ambassador",
+  "image": "images/RAN.jpg",
+  "contact": {
+    "email": "ranyarkoh@palm.edu.gh",
+    "github": "https://github.com/marpe-bit",
+    "linkedin": "https://www.linkedin.com/in/ruth-nyarkoh-84b833263/"
+  },
+  "skills": ["JavaScript", "HTML & CSS", "Microsoft Office Suite", "Communication Skill", "Git"],
+  "experience": [
+    {
+      "title": "Intern — Web Team, Example Corp",
+      "period": "Jun 2024 - Aug 2024",
+      "description": "Built front-end components and integrated REST APIs."
+    },
+     {
+      "title": "Intern — Web Team, Example Corp",
+      "period": "Jun 2024 - Aug 2024",
+      "description": "Built front-end components and integrated REST APIs."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Template",
+      "description": "A static portfolio template rendered from JSON that deploys on GitHub Pages.",
+      "link": ""
+    }
+  ]
+}
