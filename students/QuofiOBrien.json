@@ -1,0 +1,33 @@
+{
+  "username": "QuofiOBrien",
+  "name": "Ahuah-Debrah Prince Thomas",
+  "programme": "Computer Science",
+  "year": "Freshman Year",
+  "bio": "Computer Science student interested in web development, data science, and Artificial Intelligence. Comfortable with JavaScript and Python.",
+  "image": "images/Moi.png",
+  "contact": {
+    "email": "pahuah-debrah@palm.edu.gh",
+    "github": "https://github.com/QuofiOBrien",
+    "linkedin": "http://linkedin.com/in/quofiobrien"
+  },
+  "skills": ["JavaScript", "HTML & CSS", "Python", "SQL", "Git"],
+  "experience": [
+    {
+      "title": "Medclinic - Ascend Digital Solutions",
+      "period": "August 2025 - October 2025",
+      "description": "Built front-end components and integrated REST APIs."
+    },
+     {
+      "title": "Venture Vault - Palm University College",
+      "period": "June 2024 - November 2024",
+      "description": "Built front-end components and integrated REST APIs."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Template",
+      "description": "A static portfolio template rendered from JSON that deploys on GitHub Pages.",
+      "link": ""
+    }
+  ]
+}
