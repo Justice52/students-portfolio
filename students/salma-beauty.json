@@ -1,0 +1,33 @@
+{
+    "username": "salma-beauty",
+    "name": "Umusalma Yakubu",
+    "programme": "Computer Science",
+    "year": "4th Year",
+    "bio": "Computer Science student interested in machine learning, data science, and Artificial Intelligence. Comfortable with JavaScript and Python.",
+    "image": "images/salma.jpg",
+    "contact": {
+      "email": "salmaumu45@gmail.com",
+      "github": "https://github.com/salma-beauty",
+      "linkedin": "https://www.linkedin.com/in/umusalma-yakubu-65824a254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    },
+    "skills": ["Machine Learning", "HTML & CSS", "Python", "", "Git"],
+    "experience": [
+      {
+        "title": "Intern — Data Science,",
+        "period": "Jun 2025 - Sept 2025",
+        "description": "Managed institutions record management system"
+      },
+       {
+        "title": "Intern — IT suport, Example Corp",
+        "period": "Jun 2024 - Aug 2024",
+        "description": "Terminated network cables and monitored internet connectivity"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Portfolio Template",
+        "description": "A static portfolio template rendered from JSON that deploys on GitHub Pages.",
+        "link": ""
+      }
+    ]
+  }
